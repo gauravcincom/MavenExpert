@@ -6,7 +6,7 @@ public class ReadUserNameFromJenkins
 {
 
    @Test
-   public void readUrl()
+   public void readUserName()
    {
       String userName = System.getProperty("UserName");
       System.out.println("This is user name :: "+userName);

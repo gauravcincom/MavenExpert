@@ -4,6 +4,7 @@
     <classes>
        <class name="TestNG.HelloTest"/>
        <class name="TestNG.ReadUrlFromJenkins"/>
+        <class name="TestNG.ReadUserNameFromJenkins"/>
     </classes>
  </test>
 </suite>
