@@ -4,7 +4,6 @@
   <artifactId>MavenExpert</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>LMaven</name>
-  
   <properties>
     <junit.version>4.12</junit.version>
   </properties>
@@ -13,6 +12,12 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.8</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -30,9 +35,9 @@
         <version>2.21.0</version>
         <configuration>
           <!-- skip>true</skip -->
-        <systemPropertyVariables>
-        <test.type>Unit</test.type>
-        </systemPropertyVariables>
+          <systemPropertyVariables>
+            <test.type>Unit</test.type>
+          </systemPropertyVariables>
         </configuration>
         <executions>
           <execution>
@@ -47,9 +52,9 @@
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>2.21.0</version>
         <configuration>
-        <systemPropertyVariables>
-        <test.type>Integration</test.type>
-        </systemPropertyVariables>
+          <systemPropertyVariables>
+            <test.type>Integration</test.type>
+          </systemPropertyVariables>
         </configuration>
         <executions>
           <execution>
@@ -64,4 +69,42 @@
       </plugin>
     </plugins>
   </build>
+  <!--Profile for Auth Based testing -->
+  <!--Profile for QAT testing -->
+  <profiles>
+  <profile>
+    <id>TestNg-Profile</id>
+    <activation></activation>
+    <properties>
+      <it.skip>false</it.skip>
+    </properties>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.21.0</version>
+          <configuration>
+            <suiteXmlFiles>
+              <suiteXmlFile>TestNg.xml</suiteXmlFile>
+            </suiteXmlFiles>
+            <!-- skip>true</skip -->
+            <systemPropertyVariables>
+              <test.type>Unit</test.type>
+            </systemPropertyVariables>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>test</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+      </build>
+  </profile>
+  <!--Profile for QAT testing -->
+</profiles>
+</project>
 </project>
