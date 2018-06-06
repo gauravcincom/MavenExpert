@@ -9,7 +9,7 @@ public class ReadUserNameFromJenkins
    public void readUserName()
    {
       String userName = System.getProperty("UserName");
-      System.out.println("This is user name :: "+userName);
+      System.out.println("This is user name again :: "+userName);
 
    }
 
