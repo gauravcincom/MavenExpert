@@ -74,7 +74,7 @@
   <profiles>
   <profile>
     <id>TestNg-Profile</id>
-    <activation>mvn -PTestNg-Profile -DskipITs install</activation>
+    <activation></activation>
     <properties>
       <it.skip>false</it.skip>
     </properties>
