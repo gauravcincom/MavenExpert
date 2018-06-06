@@ -3,6 +3,7 @@
    <test name="Regression suite" >
     <classes>
        <class name="TestNG.HelloTest"/>
+       <class name="TestNG.ReadUrlFromJenkins"/>
     </classes>
  </test>
 </suite>
